@@ -16,6 +16,12 @@ print f
 lines = f.read()
 j=json.loads (lines)
 #j ['JobData'][0].keys()
+#job postings that contain keywords in Job Summary are put in cyber_jobs list
 cyber_jobs = []
+keywords=["cybersecurity", "cyber security", "cyber-security", "cyber risk", "cyber breach", "cyber threat", "data breach"]
 for job in j["JobData"]:
 	print job["JobSummary"]
+	for keyword in keywords:
+		if keyword in job["JobSummary"]:
+			cyber_jobs.append(job)
+print "number of cyber jobs found:", len(cyber_jobs)
