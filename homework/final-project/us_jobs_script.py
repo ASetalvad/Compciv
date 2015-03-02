@@ -20,8 +20,11 @@ for file_name in onlyfiles:
 	#job postings that contain keywords in Job Summary are put in cyber_jobs list
 	keywords=["cyber", "cybersecurity", "cyber security", "cyber-security", "cyber risk", "cyber breach", "cyber threat", "data breach"]
 	for job in j["JobData"]:
-		print job["JobSummary"]
+		#print job["JobSummary"]
 		for keyword in keywords:
 			if keyword in job["JobSummary"]:
 				cyber_jobs.append(job)
+				break
+for job_post in cyber_jobs:
+	print job_post["JobTitle"], job_post["OrganizationName"], job_post["AgencySubElement"], job_post["SalaryMin"], job_post["SalaryMax"]
 print "number of cyber jobs found:", len(cyber_jobs)
