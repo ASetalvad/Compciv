@@ -18,7 +18,7 @@ for file_name in onlyfiles:
 	j=json.loads (lines)
 	#j ['JobData'][0].keys()
 	#job postings that contain keywords in Job Summary are put in cyber_jobs list
-	keywords=["cyber", "cybersecurity", "cyber security", "cyber-security", "cyber risk", "cyber breach", "cyber threat", "data breach"]
+	keywords=["cyber", "network security", "information security", "penetration tester", "malware", "malware analysis", "information assurance", "cybersecurity", "cyber security", "cyber-security", "cyber risk", "cyber breach", "cyber threat", "data breach"]
 	for job in j["JobData"]:
 		#print job["JobSummary"]
 		for keyword in keywords:
